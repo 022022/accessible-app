@@ -2,12 +2,20 @@
 
 :root {
   --bg-color:#EDF2EC;
+  --text-color: #636060;
   --primary-color: #499A18;
+  --accent-color: #E06733;
 }
 
 html, body, div {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  color: var(--text-color);
+}
+
+img {
+  margin: 0;
 }
 
 html {
@@ -18,20 +26,16 @@ html {
 header {
   display: grid;
   justify-content: center;
-  grid-template-columns: minmax(1100px, 1440px);
-
-  padding: 42px 110px 42px 111px;
+  grid-template-columns: minmax(668px, 1220px);
+  padding: 42px 50px;
   background-color: var(--bg-color);
 }
 
 .header {
   display: grid;
   grid-template-columns: 22px 1fr 452px;
-  justify-content: center;
   align-items: center;
-
   height: 47px;
-  max-width: 1440px;
 }
 
 .header__logo {
@@ -69,22 +73,21 @@ h1.header__brand {
   display: grid;
   justify-content: center;
 
-  padding: 62px 109px;
+  padding: 62px 50px;
   background-color: var(--bg-color);
 }
 
 .welcome__container {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  max-width: 1440px;
+  grid-template-columns: 0.82fr 1fr;
+  max-width: 1220px;
+  gap: 18%;
 }
 
 .welcome__image {
   background: url('./images/leafs.png');
   background-repeat: no-repeat;
-  background-position: top right;
-  max-width: 449px;
-  width: 100%;
+  background-position: right;
   background-size: contain;
   height: 409px;
 }
@@ -99,6 +102,7 @@ h1.header__brand {
   font-size: 45px;
   line-height: 50px;
   margin-bottom: 44px;
+
 }
 
 .welcome__text {
@@ -109,7 +113,7 @@ h1.header__brand {
 }
 
 .welcome__button {
-  border: 2px solid #E06733;
+  border: 2px solid var(--accent-color);
   border-radius: 10px;
   padding: 9px 27px;
   background-color: var(--bg-color);
@@ -119,6 +123,141 @@ h1.header__brand {
   line-height: 20px;
   text-transform: uppercase;
 }
+
+/* about */
+
+.about {
+  display: grid;
+  justify-content: center;
+
+  padding: 94px 50px;
+}
+
+.about__container {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  max-width: 1220px;
+  gap: 5%;
+}
+
+.about__image {
+  background: url('./images/houseplant1.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+  height: 479px;
+}
+
+.about__accented {
+  color: var(--accent-color);
+}
+
+.about__heading {
+  font-family: 'Inika', serif;
+  font-weight: normal;
+  font-size: 40px;
+  color: var(--primary-color);
+  max-width: 464px;
+}
+
+.about__text {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  margin-top: 38px;
+}
+
+/* service */
+
+.service {
+  display: grid;
+  justify-content: center;
+
+  padding: 80px 50px 121px 50px;
+  background-color: var(--bg-color);
+}
+
+.service-container {
+  display: grid;
+  grid-template-rows: 94px 1fr;
+  gap: 90px;
+
+  max-width: 1220px;
+}
+
+.service__content{
+  display: grid;
+  grid-template-columns: 306px 1fr;
+  align-items: center;
+  gap: 142px;
+}
+
+.service__heading {
+  font-family: 'Inika', serif;
+  font-size: 40px;
+  font-weight: normal;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.service__buttons button {
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+
+  width: 160px;
+  padding: 12px 40px;
+  margin-right: 36px;
+  background-color: var(--bg-color);
+
+  font-family: 'Inika', serif;
+  font-size: 20px;
+  color: var(--accent-color);
+}
+
+.service__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  xgrid-template-rows: repeat(auto-fill, 450px);
+  column-gap: 116px;
+  row-gap: 54px;
+}
+
+.service-item {
+  outline: 1px solid var(--text-color);
+  border-radius: 20px;
+  text-align: center;
+}
+
+.service-item__content {
+  padding: 10px;
+}
+
+.service-item__image{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 330px;
+  height: 350px;
+  border-radius: 20px 20px 0 0;
+}
+
+.service-item__heading {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--accent-color);
+  margin: 0;
+}
+
+.service-item__text {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
 
 /* font-family: 'Inika', serif;
 /* font-family: 'Inter', sans-serif;
