@@ -3,7 +3,9 @@
 :root {
   --bg-color:#EDF2EC;
   --text-color: #636060;
+  --light-color: #aeaeae;
   --primary-color: #499A18;
+  --primary-light-color: #D6E7D2;
   --accent-color: #E06733;
 }
 
@@ -14,28 +16,27 @@ html, body, div {
   color: var(--text-color);
 }
 
-img {
-  margin: 0;
+button {
+  cursor: pointer;
 }
 
 html {
-  font-size: 10px;
   scroll-behavior: smooth;
 }
 
 header {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: minmax(668px, 1220px);
   padding: 42px 50px;
   background-color: var(--bg-color);
 }
 
 .header {
+  margin: 0 auto;
+  max-width: 1220px;
+  height: 47px;
+
   display: grid;
   grid-template-columns: 22px 1fr 452px;
   align-items: center;
-  height: 47px;
 }
 
 .header__logo {
@@ -70,17 +71,16 @@ h1.header__brand {
 /* welcome */
 
 .welcome {
-  display: grid;
-  justify-content: center;
-
   padding: 62px 50px;
   background-color: var(--bg-color);
 }
 
 .welcome__container {
+  margin: 0 auto;
+  max-width: 1220px;
+
   display: grid;
   grid-template-columns: 0.82fr 1fr;
-  max-width: 1220px;
   gap: 18%;
 }
 
@@ -127,17 +127,16 @@ h1.header__brand {
 /* about */
 
 .about {
-  display: grid;
-  justify-content: center;
-
   padding: 94px 50px;
 }
 
 .about__container {
+  max-width: 1220px;
+  margin: 0 auto;
+
   display: grid;
   grid-template-columns: 1.1fr 1fr;
   align-items: center;
-  max-width: 1220px;
   gap: 5%;
 }
 
@@ -180,7 +179,7 @@ h1.header__brand {
 
 .service-container {
   display: grid;
-  grid-template-rows: 94px 1fr;
+  xgrid-template-rows: 94px 1fr;
   gap: 90px;
 
   max-width: 1220px;
@@ -188,7 +187,7 @@ h1.header__brand {
 
 .service__content{
   display: grid;
-  grid-template-columns: 306px 1fr;
+  grid-template-columns: 372px 1fr;
   align-items: center;
   gap: 142px;
 }
@@ -218,13 +217,12 @@ h1.header__brand {
 .service__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  xgrid-template-rows: repeat(auto-fill, 450px);
   column-gap: 116px;
   row-gap: 54px;
 }
 
 .service-item {
-  outline: 1px solid var(--text-color);
+  outline: 1px solid var(--light-color);
   border-radius: 20px;
   text-align: center;
 }
@@ -257,6 +255,141 @@ h1.header__brand {
   margin-top: 10px;
   margin-bottom: 8px;
 }
+
+/* prices */
+
+.prices {
+  padding: 80px 50px 121px 50px;
+}
+
+.prices__container {
+  margin: 0 auto;
+  max-width: 1220px;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10%;
+}
+
+.prices__heading {
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 50px;
+}
+
+.prices__content {}
+
+.prices__teaser {
+  text-align: right;
+}
+
+.prices__image {
+  background: url('./images/leafs.png');
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: contain;
+  height: 174px;
+  margin-top: 38px;
+}
+
+.prices__accented {
+  color: var(--primary-color);
+}
+
+.prices__button {
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  padding: 12px 40px;
+  background-color: transparent;
+  font-family: 'Inika', serif;
+  font-size: 20px;
+  color: var(--accent-color);
+}
+
+.accordion {
+  display: grid;
+  gap: 20px;
+}
+
+.accordion h3 {
+  margin: 0;
+}
+
+.accordion__trigger {
+  padding: 16px 20px;
+  border-radius: 20px;
+  background-color: var(--primary-light-color);
+  border: none;
+
+  display: grid;
+  grid-template-columns: max-content 1fr 30px;
+  justify-items: start;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.accordion__title {
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.accordion__subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+}
+
+.accordion__accented {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+.accordion__text {
+}
+
+.accordion__icon {
+  width: 30px;
+  height: 30px;
+  padding: 6px;
+  border-radius: 50%;
+  background-color: var(--light-color);
+  color: white;
+}
+
+.accordion__icon::before {
+  content: '⮟';
+}
+.accordion__icon.open::before {
+  content: '⮝';
+}
+
+.accordion__panel {
+  padding: 16px 20px;
+  border-radius: 0 0 20px 20px;
+  background-color: var(--primary-light-color);
+}
+
+.accordion__panel p{
+  font-size: 16px;
+}
+
+.accordion__button {
+  border: none;
+  border-radius: 20px;
+  padding: 12px 40px;
+  background-color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+}
+
+.accordion__trigger[aria-expanded="true"] {
+  border-radius: 20px 20px 0 0;
+}
+
 
 
 /* font-family: 'Inika', serif;

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="./images/leafs.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inika&family=Inter:wght@400;700&display=swap" rel="stylesheet">
@@ -50,7 +51,7 @@
     <section class="service">
       <div class="service-container">
         <div class="service__content">
-          <h2 class="service__heading">Service and our projects</h2>
+          <h2 class="service__heading">Gardening services and projects</h2>
           <div class="service__buttons">
             <button>Gardens</button>
             <button>Lawn</button>
@@ -100,6 +101,67 @@
               <p class="service-item__text">Lorem Ipsum has been the industry</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="prices">
+      <div class="prices__container">
+        <div class="prices__content">
+          <h2 class="prices__heading">Prices</h2>
+
+          <div class="accordion">
+            <div class="accordion__section">
+              <h3>
+                <button id="trigger1" class="accordion__trigger"
+                  aria-expanded="false" aria-controls="panel1" aria-label="Basic price plan: $15 per hour">
+                  <div class="accordion__title">Basics</div>
+                  <div class="accordion__subtitle"><span class="accordion__accented">$15</span> / per hour</div>
+                  <div class="accordion__icon"></div>
+                </button>
+              </h3>
+              <div class="accordion__panel" id="panel1" role="region" aria-labelledby="trigger1" hidden>
+                <p>Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
+                <button class="accordion__button">Order</button>
+              </div>
+            </div>
+
+            <div class="accordion__section">
+              <h3>
+                <button id="trigger2" class="accordion__trigger"
+                  aria-expanded="true" aria-controls="panel2" aria-label="Basic price plan: $15 per hour">
+                  <div class="accordion__title">Standard</div>
+                  <div class="accordion__subtitle"><span class="accordion__accented">$25</span> / per hour</div>
+                  <div class="accordion__icon open"></div>
+                </button>
+              </h3>
+              <div class="accordion__panel" id="panel2" role="region" aria-labelledby="trigger2" >
+                <p>Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
+                <button class="accordion__button">Order</button>
+              </div>
+            </div>
+
+            <div class="accordion__section">
+              <h3>
+                <button id="trigger3" class="accordion__trigger"
+                  aria-expanded="false" aria-controls="panel3" aria-label="Basic price plan: $15 per hour">
+                  <div class="accordion__title">Pro Care</div>
+                  <div class="accordion__subtitle"><span class="accordion__accented">$35</span> / per hour</div>
+                  <div class="accordion__icon"></div>
+                </button>
+              </h3>
+              <div class="accordion__panel" id="panel3" role="region" aria-labelledby="trigger3" hidden>
+                <p>Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
+                <button class="accordion__button">Order</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="prices__teaser">
+          <p class="prices__heading">Our best <span class="prices__accented">gardeners</span> are ready to help you</p>
+          <button class="prices__button">Contact us</button>
+          <div class="prices__image"></div>
         </div>
       </div>
     </section>
