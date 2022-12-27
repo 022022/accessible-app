@@ -22,6 +22,7 @@ button {
 
 html {
   scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
 }
 
 header {
@@ -97,7 +98,6 @@ h1.header__brand {
 }
 
 .welcome__heading {
-  font-family: 'Inter', sans-serif;
   font-weight: bold;
   font-size: 45px;
   line-height: 50px;
@@ -106,7 +106,6 @@ h1.header__brand {
 }
 
 .welcome__text {
-  font-family: 'Inter', sans-serif;
   font-size: 20px;
   line-height: 35px;
   margin-bottom: 50px;
@@ -118,7 +117,6 @@ h1.header__brand {
   padding: 9px 27px;
   background-color: var(--bg-color);
 
-  font-family: 'Inter', sans-serif;
   font-size: 16px;
   line-height: 20px;
   text-transform: uppercase;
@@ -161,7 +159,6 @@ h1.header__brand {
 }
 
 .about__text {
-  font-family: 'Inter', sans-serif;
   font-size: 20px;
   line-height: 30px;
   margin-top: 38px;
@@ -179,7 +176,6 @@ h1.header__brand {
 
 .service-container {
   display: grid;
-  xgrid-template-rows: 94px 1fr;
   gap: 90px;
 
   max-width: 1220px;
@@ -241,7 +237,6 @@ h1.header__brand {
 }
 
 .service-item__heading {
-  font-family: 'Inter', sans-serif;
   font-size: 20px;
   font-weight: bold;
   color: var(--accent-color);
@@ -249,7 +244,6 @@ h1.header__brand {
 }
 
 .service-item__text {
-  font-family: 'Inter', sans-serif;
   font-size: 16px;
   line-height: 20px;
   margin-top: 10px;
@@ -272,13 +266,10 @@ h1.header__brand {
 }
 
 .prices__heading {
-  font-family: 'Inter', sans-serif;
   font-weight: bold;
   font-size: 40px;
   line-height: 50px;
 }
-
-.prices__content {}
 
 .prices__teaser {
   text-align: right;
@@ -331,14 +322,12 @@ h1.header__brand {
 }
 
 .accordion__title {
-  font-family: 'Inter', sans-serif;
   font-weight: bold;
   font-size: 20px;
   line-height: 20px;
 }
 
 .accordion__subtitle {
-  font-family: 'Inter', sans-serif;
   font-size: 12px;
 }
 
@@ -346,9 +335,6 @@ h1.header__brand {
   font-size: 16px;
   font-weight: bold;
   color: var(--accent-color);
-}
-
-.accordion__text {
 }
 
 .accordion__icon {
@@ -382,7 +368,6 @@ h1.header__brand {
   border-radius: 20px;
   padding: 12px 40px;
   background-color: white;
-  font-family: 'Inter', sans-serif;
   font-size: 20px;
 }
 
@@ -390,7 +375,72 @@ h1.header__brand {
   border-radius: 20px 20px 0 0;
 }
 
+/* Contact */
+
+.contact {
+  padding: 42px 50px 0;
+  background-color: var(--bg-color);
+}
+
+.contact__container {
+  margin: 0 auto;
+  max-width: 1220px;
+}
+
+.contact__heading {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 50px;
+}
+
+.contact__content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: end;
+  gap: 10%;
+}
+
+.contact__image {
+  height: 497px;
+  background-image: url('./images/contact.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom left;
+}
+
+.address {
+  align-self: start;
+  justify-self: end;
+}
+
+.select-field {
+  padding: 10px 30px;
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  font-size: 20px;
+  background-color: var(--bg-color);
+  width: 450px;
+  outline: none;
+}
+
+.select-field:focus {
+  border: 1px solid var(--accent-color);
+}
+
+.contact__address {
+  padding-top: 40px;
+  display: grid;
+  gap: 20px;
+}
+
+.key-value {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+}
+
+.key-value div:first-child {
+  font-weight: bold;
+}
 
 
 /* font-family: 'Inika', serif;
-/* font-family: 'Inter', sans-serif;

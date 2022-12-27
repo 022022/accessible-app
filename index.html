@@ -166,6 +166,42 @@
       </div>
     </section>
 
+    <section class="contact">
+      <div class="contact__container">
+        <h2 class="contact__heading">Contact us</h2>
+        <div class="contact__content">
+          <div class="contact__image"></div>
+          <div class="address">
+
+            <label for="city" class="select-label" aria-label="Select city to see the address" >
+              <select id="city" name="city" class="select-field" >
+                <option value="Delhi" selected aria-controls="address-delhi">Delhi, India</option>
+                <option value="Montreal">Montreal, Canada</option>
+                <option value="Tokio">Tokio, Japan</option>
+              </select>
+            </label>
+
+            <div class="contact__address" id="address-delhi" role="region">
+              <div class="key-value"><div>City</div><div>Delhi</div></div>
+              <div class="key-value"><div>Office Address</div><div>21, Sundar Nagar, New Delhi</div></div>
+              <div class="key-value"><div>Phone Number</div><div>+9 876 543 21 00</div></div>
+            </div>
+            <div class="contact__address" id="address-montreal" role="region" style="display: none;">
+              <div class="key-value"><div>City</div><div>Montreal</div></div>
+              <div class="key-value"><div>Office Address</div><div>90 Av. Roosevelt</div></div>
+              <div class="key-value"><div>Phone Number</div><div>+9 876 543 21 00</div></div>
+            </div>
+            <div class="contact__address" id="address-tokio" role="region" style="display: none;">
+              <div class="key-value"><div>City</div><div>Tokio</div></div>
+              <div class="key-value"><div>Office Address</div><div>2-1 Kitanomarukoen, Chiyoda</div></div>
+              <div class="key-value"><div>Phone Number</div><div>+9 876 543 21 00</div></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
     <script></script>
   </body>
 </html>
