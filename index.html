@@ -173,35 +173,40 @@
           <div class="contact__image"></div>
           <div class="address">
 
-            <label for="city" class="select-label" aria-label="Select city to see the address" >
-              <select id="city" name="city" class="select-field" >
-                <option value="Delhi" selected aria-controls="address-delhi">Delhi, India</option>
-                <option value="Montreal">Montreal, Canada</option>
-                <option value="Tokio">Tokio, Japan</option>
-              </select>
-            </label>
+            <div class="dropdown-menu-button wrapper" id="address-menu-wrapper">
+              <button class="dropdown-menu-trigger" id="address-menu-trigger" aria-controls="address-menu-items" aria-expanded="false"
+                  aria-haspopup="true" type="button">Select city to see the address<div class="dropdown-menu-trigger__icon"></div></button>
+                <ul id="address-menu-items" role="menu" class="dropdown-menu-items" aria-labelledby="address-menu-trigger">
+                    <li class="menuitem" role="menuitem" tabindex="-1" aria-controls="address-1"> Delhi, India</li>
+                    <li class="menuitem" role="menuitem" tabindex="-1" aria-controls="address-2"> Montreal, Canada</li>
+                    <li class="menuitem" role="menuitem" tabindex="-1" aria-controls="address-3"> Tokio, Japan</li>
+                </ul>
+            </div>
 
-            <div class="contact__address" id="address-delhi" role="region">
-              <div class="key-value"><div>City</div><div>Delhi</div></div>
-              <div class="key-value"><div>Office Address</div><div>21, Sundar Nagar, New Delhi</div></div>
-              <div class="key-value"><div>Phone Number</div><div>+9 876 543 21 00</div></div>
+            <div id="contact-addresses">
+              <div class="contact__address" id="address-1" role="region" >
+                <div class="key-value"><div>City</div><div>Delhi</div></div>
+                <div class="key-value"><div>Office Address</div><div>21, Sundar Nagar, New Delhi</div></div>
+                <div class="key-value"><div>Phone Number</div><div>+9 876 543 21 00</div></div>
+              </div>
+              <div class="contact__address" id="address-2" role="region" style="display: none;">
+                <div class="key-value"><div>City</div><div>Montreal</div></div>
+                <div class="key-value"><div>Office Address</div><div>90 Av. Roosevelt</div></div>
+                <div class="key-value"><div>Phone Number</div><div>+9 876 543 21 00</div></div>
+              </div>
+              <div class="contact__address" id="address-3" role="region" style="display: none;">
+                <div class="key-value"><div>City</div><div>Tokio</div></div>
+                <div class="key-value"><div>Office Address</div><div>2-1 Kitanomarukoen, Chiyoda</div></div>
+                <div class="key-value"><div>Phone Number</div><div>+9 876 543 21 00</div></div>
+              </div>
             </div>
-            <div class="contact__address" id="address-montreal" role="region" style="display: none;">
-              <div class="key-value"><div>City</div><div>Montreal</div></div>
-              <div class="key-value"><div>Office Address</div><div>90 Av. Roosevelt</div></div>
-              <div class="key-value"><div>Phone Number</div><div>+9 876 543 21 00</div></div>
-            </div>
-            <div class="contact__address" id="address-tokio" role="region" style="display: none;">
-              <div class="key-value"><div>City</div><div>Tokio</div></div>
-              <div class="key-value"><div>Office Address</div><div>2-1 Kitanomarukoen, Chiyoda</div></div>
-              <div class="key-value"><div>Phone Number</div><div>+9 876 543 21 00</div></div>
-            </div>
+
           </div>
 
         </div>
       </div>
     </section>
 
-    <script></script>
+    <script src="./js.js"></script>
   </body>
 </html>
