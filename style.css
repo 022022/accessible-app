@@ -27,14 +27,14 @@ html {
 }
 
 header {
-  padding: 42px 50px;
+  padding: 40px 100px;
   background-color: var(--bg-color);
 }
 
 .header {
   margin: 0 auto;
   max-width: 1220px;
-  height: 47px;
+  height: 50px;
 
   display: grid;
   grid-template-columns: 22px 1fr 452px;
@@ -58,7 +58,7 @@ h1.header__brand {
 
 .header__nav ul{
   display: grid;
-  gap: 46px;
+  gap: 40px;
   grid-template-columns: repeat(5, max-content);
   padding: 0;
   margin: 0;
@@ -73,7 +73,7 @@ h1.header__brand {
 /* welcome */
 
 .welcome {
-  padding: 62px 50px;
+  padding: 40px 100px;
   background-color: var(--bg-color);
 }
 
@@ -82,8 +82,8 @@ h1.header__brand {
   max-width: 1220px;
 
   display: grid;
-  grid-template-columns: 0.82fr 1fr;
-  gap: 18%;
+  grid-template-columns: 0.8fr 1fr;
+  gap: 20%;
 }
 
 .welcome__image {
@@ -91,7 +91,7 @@ h1.header__brand {
   background-repeat: no-repeat;
   background-position: right;
   background-size: contain;
-  height: 409px;
+  height: 400px;
 }
 
 .welcome__accented {
@@ -100,9 +100,9 @@ h1.header__brand {
 
 .welcome__heading {
   font-weight: bold;
-  font-size: 45px;
-  line-height: 50px;
-  margin-bottom: 44px;
+  font-size: 48px;
+  line-height: 48px;
+  margin-bottom: 40px;
 
 }
 
@@ -115,7 +115,7 @@ h1.header__brand {
 .welcome__button {
   border: 2px solid var(--accent-color);
   border-radius: 10px;
-  padding: 9px 27px;
+  padding: 10px 30px;
   background-color: var(--bg-color);
 
   font-size: 16px;
@@ -123,99 +123,25 @@ h1.header__brand {
   text-transform: uppercase;
 }
 
-/* about */
 
-.about {
-  padding: 94px 50px;
-}
-
-.about__container {
-  max-width: 1220px;
-  margin: 0 auto;
-
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  align-items: center;
-  gap: 5%;
-}
-
-.about__image {
-  background: url('./images/houseplant1.png');
-  background-repeat: no-repeat;
-  background-position: right;
-  background-size: contain;
-  height: 479px;
-}
-
-.about__accented {
-  color: var(--accent-color);
-}
-
-.about__heading {
-  font-family: 'Inika', serif;
-  font-weight: normal;
-  font-size: 40px;
-  color: var(--primary-color);
-  max-width: 464px;
-}
-
-.about__text {
-  font-size: 20px;
-  line-height: 30px;
-  margin-top: 38px;
-}
 
 /* service */
 
 .service {
-  display: grid;
-  justify-content: center;
-
-  padding: 80px 50px 121px 50px;
+  padding: 40px 100px 40px;
   background-color: var(--bg-color);
 }
 
 .service-container {
-  display: grid;
-  gap: 90px;
-
+  margin: 0 auto;
   max-width: 1220px;
-}
-
-.service__content{
-  display: grid;
-  grid-template-columns: 372px 1fr;
-  align-items: center;
-  gap: 142px;
-}
-
-.service__heading {
-  font-family: 'Inika', serif;
-  font-size: 40px;
-  font-weight: normal;
-  color: var(--primary-color);
-  margin: 0;
-}
-
-.service__buttons button {
-  border: 1px solid var(--accent-color);
-  border-radius: 4px;
-
-  width: 160px;
-  padding: 12px 40px;
-  margin-right: 36px;
-  background-color: var(--bg-color);
-
-  font-family: 'Inika', serif;
-  font-size: 20px;
-  color: var(--accent-color);
 }
 
 .service__list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 116px;
-  row-gap: 54px;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  column-gap: 40px;
+  row-gap: 40px;
 }
 
 .service-item {
@@ -232,8 +158,8 @@ h1.header__brand {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  width: 330px;
-  height: 350px;
+  min-width: 200px;
+  height: 300px;
   border-radius: 20px 20px 0 0;
 }
 
@@ -251,10 +177,11 @@ h1.header__brand {
   margin-bottom: 8px;
 }
 
+
 /* prices */
 
 .prices {
-  padding: 80px 50px 121px 50px;
+  padding: 80px 100px 120px;
 }
 
 .prices__container {
@@ -277,12 +204,11 @@ h1.header__brand {
 }
 
 .prices__image {
-  background: url('./images/leafs.png');
+  background: url('./images/houseplant1.png');
   background-repeat: no-repeat;
-  background-position: bottom right;
+  background-position: right;
   background-size: contain;
-  height: 174px;
-  margin-top: 38px;
+  height: 300px;
 }
 
 .prices__accented {
@@ -292,7 +218,7 @@ h1.header__brand {
 .prices__button {
   border: 1px solid var(--accent-color);
   border-radius: 4px;
-  padding: 12px 40px;
+  padding: 10px 40px;
   background-color: transparent;
   font-family: 'Inika', serif;
   font-size: 20px;
@@ -329,7 +255,7 @@ h1.header__brand {
 }
 
 .accordion__subtitle {
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .accordion__accented {
@@ -369,7 +295,7 @@ h1.header__brand {
 .accordion__button {
   border: none;
   border-radius: 20px;
-  padding: 12px 40px;
+  padding: 20px 40px;
   background-color: white;
   font-size: 20px;
 }
@@ -381,7 +307,7 @@ h1.header__brand {
 /* Contact */
 
 .contact {
-  padding: 42px 50px 0;
+  padding: 40px 100px 0;
   background-color: var(--bg-color);
 }
 
@@ -404,15 +330,15 @@ h1.header__brand {
 }
 
 .contact__image {
-  height: 497px;
+  height: 400px;
   background-image: url('./images/contact.png');
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: bottom left;
+  background-position: bottom center;
 }
 
 .address {
-  align-self: start;
+  align-self: center;
   justify-self: end;
 }
 
@@ -504,11 +430,5 @@ h1.header__brand {
   background-color: var(--primary-color);
   color: white;
 }
-
-
-
-
-
-
 
 /* font-family: 'Inika', serif;
