@@ -37,7 +37,7 @@ header {
   height: 50px;
 
   display: grid;
-  grid-template-columns: 22px 1fr 452px;
+  grid-template-columns: 22px 1fr 344px;
   align-items: center;
 }
 
@@ -56,7 +56,7 @@ h1.header__brand {
   font-weight: 400;
 }
 
-.header__nav ul{
+.header__nav-desktop {
   display: grid;
   gap: 40px;
   grid-template-columns: repeat(5, max-content);
@@ -83,7 +83,7 @@ h1.header__brand {
 
   display: grid;
   grid-template-columns: 0.8fr 1fr;
-  gap: 20%;
+  gap: 10%;
 }
 
 .welcome__image {
@@ -103,12 +103,11 @@ h1.header__brand {
   font-size: 48px;
   line-height: 48px;
   margin-bottom: 40px;
-
 }
 
 .welcome__text {
   font-size: 20px;
-  line-height: 35px;
+  line-height: 32px;
   margin-bottom: 50px;
 }
 
@@ -128,7 +127,7 @@ h1.header__brand {
 /* service */
 
 .service {
-  padding: 40px 100px 40px;
+  padding: 40px 100px 120px;
   background-color: var(--bg-color);
 }
 
@@ -181,7 +180,7 @@ h1.header__brand {
 /* prices */
 
 .prices {
-  padding: 80px 100px 120px;
+  padding: 40px 100px 100px;
 }
 
 .prices__container {
@@ -278,6 +277,7 @@ h1.header__brand {
 .accordion__icon::before {
   content: '⮟';
 }
+
 .accordion__icon.open::before {
   content: '⮝';
 }
@@ -431,4 +431,148 @@ h1.header__brand {
   color: white;
 }
 
-/* font-family: 'Inika', serif;
+/* adaptive */
+
+@media (max-width: 990px){
+
+  header {
+    padding: 40px 50px;
+  }
+
+  .welcome {
+    padding: 20px 50px;
+  }
+
+  .service, .prices {
+    padding: 20px 50px 50px;
+  }
+
+  .contact {
+    padding: 20px 50px 0;
+  }
+
+  .welcome__heading {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 20px;
+  }
+
+  .prices__heading {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .contact__heading {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+@media (max-width: 780px) {
+
+  header, .welcome {
+    padding: 10px 30px;
+  }
+
+  .service, .prices {
+    padding: 10px 30px 30px;
+  }
+
+  .contact {
+    padding: 10px 30px 0;
+  }
+
+  .header__nav-desktop {
+    display: none;
+  }
+
+  .header, .service-container, .contact__container {
+    max-width: 400px;
+  }
+
+  .welcome__container {
+    max-width: 400px;
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .welcome__image {
+    background-position: center;
+    height: 200px;
+    order: 2;
+  }
+
+  .welcome__content {
+    order: 1;
+  }
+
+  .welcome__text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .welcome__heading {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 20px;
+  }
+
+  .service__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    column-gap: 20px;
+    row-gap: 20px;
+    justify-content: center;
+  }
+
+  .prices__teaser {
+    display: none;
+  }
+
+  .prices__container {
+    max-width: 400px;
+    grid-template-columns: 1fr;
+  }
+
+  .accordion__title {
+    font-size: 16px;
+  }
+
+  .accordion__subtitle {
+    font-size: 12px;
+  }
+
+  .accordion__trigger {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .accordion__button {
+    padding: 10px 40px;
+    font-size: 16px;
+  }
+
+  .accordion__panel {
+    padding: 10px 12px;
+  }
+
+  .contact__content {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .contact__image {
+    height: 150px;
+    margin-top: 20px;
+    order: 2;
+  }
+
+  .dropdown-menu-trigger {
+    width: 100%;
+  }
+
+  .address {
+    justify-self: auto;
+    order: 1;
+  }
+}
