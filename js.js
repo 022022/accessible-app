@@ -3,7 +3,7 @@
 const addressMenuWrapper = document.getElementById('address-menu-wrapper');
 
 addressMenuWrapper.addEventListener('click', handleMenu);
-addressMenuWrapper.addEventListener('keydown', handleKeyBoard);
+addressMenuWrapper.addEventListener('keydown', handleKeyBoardAddress);
 addressMenuWrapper.firstElementChild.addEventListener('focus', focusWhenAlreadyOpen);
 
 function handleMenu(event){
@@ -35,7 +35,7 @@ function handleMenu(event){
   }
 }
 
-function handleKeyBoard(event){
+function handleKeyBoardAddress(event){
   switch (event.code) {
     case 'Enter':
     case 'Space':
@@ -70,4 +70,42 @@ function focusWhenAlreadyOpen(event){
   if(wrapper.firstElementChild.getAttribute('aria-expanded') === 'true') {
     wrapper.lastElementChild.firstElementChild.focus();
   }
+}
+
+
+/* accessible accordion */
+
+const accordionTriggers = document.querySelectorAll('.accordion__trigger');
+const accordionPanels = document.querySelectorAll('.accordion__panel');
+
+Array.from(accordionTriggers).forEach((item) => item.addEventListener('click', openAccordion));
+Array.from(accordionTriggers).forEach((item) => item.addEventListener('keydown', handleKeyBoardAccordion));
+
+function openAccordion(event){
+  const button = event.target.closest('button');
+  const panelID = button.getAttribute('aria-controls').slice('panel'.length);
+
+  Array.from(accordionPanels).forEach((item, index) => {
+    const respectiveTrigger = Array.from(accordionTriggers)[index];
+
+    if(String(index) !== panelID) {
+      item.classList.remove('open');
+      respectiveTrigger.setAttribute('aria-expanded', 'false');
+    } else {
+      item.classList.add('open');
+      respectiveTrigger.setAttribute('aria-expanded', 'true');
+    }
+  })
+}
+
+function handleKeyBoardAccordion(event){
+  switch(event.code){
+    case 'Enter':
+    case 'Space':
+      openAccordion(event);
+      return;
+    default:
+      return;
+  }
+
 }

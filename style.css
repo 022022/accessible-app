@@ -283,6 +283,7 @@ h1.header__brand {
 }
 
 .accordion__panel {
+  display: none;
   padding: 16px 20px;
   border-radius: 0 0 20px 20px;
   background-color: var(--primary-light-color);
