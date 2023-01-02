@@ -4,7 +4,7 @@
   --bg-color:#EDF2EC;
   --text-color: #636060;
   --light-color: #aeaeae;
-  --primary-color: #499A18;
+  --primary-color: #3E900D;
   --primary-light-color: #D6E7D2;
   --accent-color: #E06733;
 }
@@ -14,6 +14,7 @@ html, body, div {
   padding: 0;
   box-sizing: border-box;
   color: var(--text-color);
+  transition: 0.3s;
 }
 
 button {
@@ -37,17 +38,17 @@ header {
   height: 50px;
 
   display: grid;
-  grid-template-columns: 22px 1fr 344px;
+  grid-template-columns: 22px 1fr 400px;
   align-items: center;
 }
 
 .header__logo {
   background: url('./images/logo_vector.svg');
   background-repeat: no-repeat;
-
   height: 22px;
   width: 22px;
   margin-bottom: 3px;
+  z-index: 1000;
 }
 
 h1.header__brand {
@@ -56,18 +57,50 @@ h1.header__brand {
   font-weight: 400;
 }
 
-.header__nav-desktop {
+.skip-navigation {
+  opacity: 0;
+  cursor: pointer;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  background-color: var(--primary-color);
+  color: white;
+  outline: none;
+  padding: 10px;
+  text-decoration: none;
+  border-radius: 0 0 10px 10px;
+}
+
+.skip-navigation:focus {
+  opacity: 1;
+}
+
+.burger {
+  display: none;
+}
+
+.header-nav-items {
   display: grid;
-  gap: 40px;
+  gap: 30px;
   grid-template-columns: repeat(5, max-content);
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-.header__nav ul li a{
+.header-nav-items li a{
   font-family: 'Inika', serif;
   font-size: 16px;
+  color: var(--primary-color);
+  padding: 10px;
+  text-decoration: none;
+}
+
+.header-nav-items li a:hover, .header-nav-items li a:focus{
+  background-color: var(--primary-color);
+  color: white;
+  outline: none;
+  border-radius: 10px;
 }
 
 /* welcome */
@@ -121,8 +154,6 @@ h1.header__brand {
   line-height: 20px;
   text-transform: uppercase;
 }
-
-
 
 /* service */
 
@@ -247,6 +278,23 @@ h1.header__brand {
   gap: 20px;
 }
 
+.accordion__trigger:hover, .accordion__trigger:focus{
+  background-color: var(--primary-color);
+  outline: none;
+}
+
+.accordion__trigger:hover .accordion__title,
+.accordion__trigger:hover .accordion__subtitle,
+.accordion__trigger:hover .accordion__accented {
+  color: white;
+}
+
+.accordion__trigger:focus .accordion__title,
+.accordion__trigger:focus .accordion__subtitle,
+.accordion__trigger:focus .accordion__accented {
+  color: white;
+}
+
 .accordion__title {
   font-weight: bold;
   font-size: 20px;
@@ -264,22 +312,17 @@ h1.header__brand {
 }
 
 .accordion__icon {
-  width: 30px;
-  height: 30px;
-  padding: 6px;
+  width: 15px;
+  height: 16px;
+  padding: 5px 6px 6px;
   border-radius: 50%;
   background-color: var(--light-color);
   color: white;
   font-size: 13px;
-
 }
 
 .accordion__icon::before {
   content: '⮟';
-}
-
-.accordion__icon.open::before {
-  content: '⮝';
 }
 
 .accordion__panel {
@@ -296,10 +339,17 @@ h1.header__brand {
 .accordion__button {
   border: none;
   border-radius: 20px;
-  padding: 20px 40px;
+  padding: 10px 30px;
   background-color: white;
   font-size: 20px;
 }
+
+.accordion__button:hover, .accordion__button:focus {
+  background-color: var(--primary-color);
+  outline: none;
+  color: white;
+}
+
 
 .accordion__trigger[aria-expanded="true"] {
   border-radius: 20px 20px 0 0;
@@ -358,12 +408,13 @@ h1.header__brand {
   font-weight: bold;
 }
 
-
 .dropdown-menu-trigger {
   display: grid;
-  grid-template-columns: 1fr 20px;
+  grid-template-columns: 1fr 30px;
+  gap: 10px;
   align-items: center;
   justify-items: start;
+  text-align: left;
   padding: 10px 30px;
   outline: 1px solid var(--primary-color);
   border-radius: 4px;
@@ -371,23 +422,25 @@ h1.header__brand {
   background-color: var(--bg-color);
   width: 450px;
   border: none;
+  border-radius: 10px;
 }
 
 .dropdown-menu-trigger__icon{
-  width: 30px;
-  height: 30px;
-  padding: 6px;
+  width: 15px;
+  height: 16px;
+  padding: 5px 6px 6px;
   border-radius: 50%;
   background-color: var(--light-color);
   color: white;
   font-size: 13px;
+  text-align: center;
 }
 
 .dropdown-menu-trigger__icon::before {
   content: '⮟';
 }
 
-.dropdown-menu-trigger:focus {
+.dropdown-menu-trigger:hover, .dropdown-menu-trigger:focus {
   background-color: var(--primary-color);
   color: white;
 }
@@ -416,10 +469,6 @@ h1.header__brand {
   margin: 0;
 }
 
-.open {
-  display: grid;
-}
-
 .menuitem {
   width: 100%;
   text-align: center;
@@ -430,6 +479,7 @@ h1.header__brand {
   cursor: pointer;
   background-color: var(--primary-color);
   color: white;
+  border-radius: 4px;
 }
 
 /* adaptive */
@@ -483,7 +533,81 @@ h1.header__brand {
     padding: 10px 30px 0;
   }
 
-  .header__nav-desktop {
+  .header {
+    grid-template-columns: 22px 1fr 1fr;
+  }
+
+  .header-nav-items {
+    display: none;
+    grid-template-columns: 1fr;
+    background-color: var(--primary-light-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    grid-template-rows: repeat(auto-fit, 20px);
+    padding: 60px 0;
+    justify-items: center;
+    box-shadow: 0px 4px 8px 0px var(--light-color);
+  }
+
+  .header-nav-items li a {
+    font-size: 18px;
+  }
+
+  .burger {
+    display: grid;
+    align-items: center;
+    width: 48px;
+    height: 40px;
+    position: relative;
+    justify-self: right;
+    z-index: 1000;
+    outline: none;
+    border: none;
+  }
+
+  .burger:focus, .burger:hover {
+    background-color: var(--primary-color);
+    outline: none;
+    border-radius: 10px;
+  }
+
+  .burger:focus span,
+  .burger:focus span:before,
+  .burger:focus span:after,
+  .burger:hover span,
+  .burger:hover span:before,
+  .burger:hover span:after {
+    background: white;
+  }
+
+  .burger span,
+  .burger span:before,
+  .burger span:after {
+      position: absolute;
+      right: 9px;
+      width: 30px;
+      height: 3px;
+      border-radius: 4px;
+      background: var(--primary-color);
+  }
+
+  .burger span:before,
+  .burger span:after {
+      content: '';
+      left: 0;
+  }
+
+  .burger span:before {
+      top: -10px;
+  }
+
+  .burger span:after {
+      top: 10px;
+  }
+
+  .skip-navigation {
     display: none;
   }
 
@@ -570,10 +694,15 @@ h1.header__brand {
 
   .dropdown-menu-trigger {
     width: 100%;
+    padding: 10px;
   }
 
   .address {
     justify-self: auto;
     order: 1;
   }
+}
+
+.open {
+  display: grid;
 }

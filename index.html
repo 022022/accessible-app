@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,184 +8,195 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inika&family=Inter:wght@400;700&display=swap" rel="stylesheet">
-      <title></title>
+    <title>Gardeners</title>
   </head>
   <body>
     <header>
       <div class="header">
         <div class="header__logo"></div>
         <h1 class="header__brand">Plants</h1>
-        <nav class="header__nav">
-          <ul class="header__nav-desktop">
-            <li><a>About Us</a></li>
-            <li><a>Service</a></li>
-            <li><a>Price</a></li>
-            <li><a>Contacts</a></li>
+        <button class="burger" id="burger" aria-label="Main menu" title="Menu"
+              aria-expanded="false" aria-controls="header-nav-items" aria-haspopup="true">
+              <span></span>
+        </button>
+
+        <nav class="header__nav" >
+          <a href="#welcome" class="skip-navigation">Skip navigation</a>
+
+          <ul class="header-nav-items" id="header-nav-items">
+            <li><a href="#welcome">About Us</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#prices">Prices</a></li>
+            <li><a href="#contacts">Contacts</a></li>
           </ul>
+
         </nav>
       </div>
     </header>
 
-    <section class="welcome">
-      <div class="welcome__container">
-        <div class="welcome__image"></div>
-        <div class="welcome__content">
-          <h2 class="welcome__heading">We grow <span class="welcome__accented">plants</span> and give you oxygen</h2>
-          <p class="welcome__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.  </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="service">
-      <div class="service-container">
-        <div class="service__list">
-          <div class="service-item">
-            <div class="service-item__image" style="background-image: url('./images/1.png')"></div>
-            <div class="service-item__content">
-              <h3 class="service-item__heading">Garden care</h3>
-              <p class="service-item__text">Lorem Ipsum has been the industry</p>
-            </div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__image" style="background-image: url('./images/2.png')"></div>
-            <div class="service-item__content">
-              <h3 class="service-item__heading">Garden care</h3>
-              <p class="service-item__text">Lorem Ipsum has been the industry</p>
-            </div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__image" style="background-image: url('./images/3.png')";></div>
-            <div class="service-item__content">
-              <h3 class="service-item__heading">Garden care</h3>
-              <p class="service-item__text">Lorem Ipsum has been the industry</p>
-            </div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__image" style="background-image: url('./images/4.png')";></div>
-            <div class="service-item__content">
-              <h3 class="service-item__heading">Garden care</h3>
-              <p class="service-item__text">Lorem Ipsum has been the industry</p>
-            </div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__image" style="background-image: url('./images/5.png')";></div>
-            <div class="service-item__content">
-              <h3 class="service-item__heading">Garden care</h3>
-              <p class="service-item__text">Lorem Ipsum has been the industry</p>
-            </div>
-          </div>
-          <div class="service-item">
-            <div class="service-item__image" style="background-image: url('./images/6.png')";></div>
-            <div class="service-item__content">
-              <h3 class="service-item__heading">Garden care</h3>
-              <p class="service-item__text">Lorem Ipsum has been the industry</p>
-            </div>
+    <main>
+      <section class="welcome" id="welcome" tabindex="-1">
+        <div class="welcome__container">
+          <div class="welcome__image"></div>
+          <div class="welcome__content">
+            <h2 class="welcome__heading">We grow <span class="welcome__accented">plants</span> and give you oxygen</h2>
+            <p class="welcome__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.  </p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="prices">
-      <div class="prices__container">
-        <div class="prices__content">
-          <h2 class="prices__heading">Prices</h2>
-
-          <div class="accordion">
-            <div class="accordion__section">
-              <h3>
-                <button id="trigger0" class="accordion__trigger"
-                  aria-expanded="false" aria-controls="panel0" aria-label="Basic price plan: $15 per hour">
-                  <div class="accordion__title">Basics</div>
-                  <div class="accordion__subtitle"><span class="accordion__accented">$15</span> / per hour</div>
-                  <div class="accordion__icon"></div>
-                </button>
-              </h3>
-              <div class="accordion__panel" id="panel0" role="region" aria-labelledby="trigger0">
-                <p>Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
-                <button class="accordion__button">Order</button>
+      <section class="service" id="service" tabindex="-1">
+        <div class="service-container">
+          <div class="service__list">
+            <div class="service-item">
+              <div class="service-item__image" style="background-image: url('./images/1.png')"></div>
+              <div class="service-item__content">
+                <h3 class="service-item__heading">Garden care</h3>
+                <p class="service-item__text">Lorem Ipsum has been the industry</p>
               </div>
             </div>
-
-            <div class="accordion__section">
-              <h3>
-                <button id="trigger1" class="accordion__trigger"
-                  aria-expanded="true" aria-controls="panel1" aria-label="Standard price plan: $25 per hour">
-                  <div class="accordion__title">Standard</div>
-                  <div class="accordion__subtitle"><span class="accordion__accented">$25</span> / per hour</div>
-                  <div class="accordion__icon open"></div>
-                </button>
-              </h3>
-              <div class="accordion__panel open" id="panel1" role="region" aria-labelledby="trigger1" >
-                <p>Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
-                <button class="accordion__button">Order</button>
+            <div class="service-item">
+              <div class="service-item__image" style="background-image: url('./images/2.png')"></div>
+              <div class="service-item__content">
+                <h3 class="service-item__heading">Garden care</h3>
+                <p class="service-item__text">Lorem Ipsum has been the industry</p>
               </div>
             </div>
-
-            <div class="accordion__section">
-              <h3>
-                <button id="trigger2" class="accordion__trigger"
-                  aria-expanded="false" aria-controls="panel2" aria-label="Pro Care price plan: $35 per hour">
-                  <div class="accordion__title">Pro Care</div>
-                  <div class="accordion__subtitle"><span class="accordion__accented">$35</span> / per hour</div>
-                  <div class="accordion__icon"></div>
-                </button>
-              </h3>
-              <div class="accordion__panel" id="panel2" role="region" aria-labelledby="trigger2">
-                <p>Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
-                <button class="accordion__button">Order</button>
+            <div class="service-item">
+              <div class="service-item__image" style="background-image: url('./images/3.png')"></div>
+              <div class="service-item__content">
+                <h3 class="service-item__heading">Garden care</h3>
+                <p class="service-item__text">Lorem Ipsum has been the industry</p>
+              </div>
+            </div>
+            <div class="service-item">
+              <div class="service-item__image" style="background-image: url('./images/4.png')"></div>
+              <div class="service-item__content">
+                <h3 class="service-item__heading">Garden care</h3>
+                <p class="service-item__text">Lorem Ipsum has been the industry</p>
+              </div>
+            </div>
+            <div class="service-item">
+              <div class="service-item__image" style="background-image: url('./images/5.png')"></div>
+              <div class="service-item__content">
+                <h3 class="service-item__heading">Garden care</h3>
+                <p class="service-item__text">Lorem Ipsum has been the industry</p>
+              </div>
+            </div>
+            <div class="service-item">
+              <div class="service-item__image" style="background-image: url('./images/6.png')"></div>
+              <div class="service-item__content">
+                <h3 class="service-item__heading">Garden care</h3>
+                <p class="service-item__text">Lorem Ipsum has been the industry</p>
               </div>
             </div>
           </div>
-
         </div>
-        <div class="prices__teaser">
-          <p class="prices__heading">Our best <span class="prices__accented">gardeners</span> are ready to help you</p>
-          <div class="prices__image"></div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="contact">
-      <div class="contact__container">
-        <h2 class="contact__heading">Contact us</h2>
-        <div class="contact__content">
-          <div class="contact__image"></div>
-          <div class="address">
+      <section class="prices" id="prices" tabindex="-1">
+        <div class="prices__container">
+          <div class="prices__content">
+            <h2 class="prices__heading">Prices</h2>
 
-            <div class="dropdown-menu-button wrapper" id="address-menu-wrapper">
-              <button class="dropdown-menu-trigger" id="address-menu-trigger" aria-controls="address-menu-items" aria-expanded="false"
-                  aria-haspopup="true" type="button">Select city to see the address<div class="dropdown-menu-trigger__icon"></div></button>
-                <ul id="address-menu-items" role="menu" class="dropdown-menu-items" aria-labelledby="address-menu-trigger">
-                    <li class="menuitem" role="menuitem" tabindex="-1" aria-controls="address-1"> Delhi, India</li>
-                    <li class="menuitem" role="menuitem" tabindex="-1" aria-controls="address-2"> Montreal, Canada</li>
-                    <li class="menuitem" role="menuitem" tabindex="-1" aria-controls="address-3"> Tokio, Japan</li>
-                </ul>
-            </div>
-
-            <div id="contact-addresses">
-              <div class="contact__address" id="address-1" role="region" >
-                <div class="key-value"><div>City</div><div>Delhi</div></div>
-                <div class="key-value"><div>Office Address</div><div>21, Sundar Nagar, New Delhi</div></div>
-                <div class="key-value"><div>Phone Number</div><div>+9 876 543 21 00</div></div>
+            <div class="accordion">
+              <div class="accordion__section">
+                <h3>
+                  <button id="trigger0" class="accordion__trigger"
+                    aria-expanded="false" aria-controls="panel0" aria-label="Basic price plan: $15 per hour">
+                    <span class="accordion__title">Basics</span>
+                    <span class="accordion__subtitle"><span class="accordion__accented">$15</span> / per hour</span>
+                    <span class="accordion__icon"></span>
+                  </button>
+                </h3>
+                <div class="accordion__panel" id="panel0" role="region" aria-labelledby="trigger0">
+                  <p>Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
+                  <button class="accordion__button">Order</button>
+                </div>
               </div>
-              <div class="contact__address" id="address-2" role="region" style="display: none;">
-                <div class="key-value"><div>City</div><div>Montreal</div></div>
-                <div class="key-value"><div>Office Address</div><div>90 Av. Roosevelt</div></div>
-                <div class="key-value"><div>Phone Number</div><div>+9 876 543 21 00</div></div>
+
+              <div class="accordion__section">
+                <h3>
+                  <button id="trigger1" class="accordion__trigger"
+                    aria-expanded="true" aria-controls="panel1" aria-label="Standard price plan: $25 per hour">
+                    <span class="accordion__title">Standard</span>
+                    <span class="accordion__subtitle"><span class="accordion__accented">$25</span> / per hour</span>
+                    <span class="accordion__icon"></span>
+                  </button>
+                </h3>
+                <div class="accordion__panel open" id="panel1" role="region" aria-labelledby="trigger1" >
+                  <p>Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
+                  <button class="accordion__button">Order</button>
+                </div>
               </div>
-              <div class="contact__address" id="address-3" role="region" style="display: none;">
-                <div class="key-value"><div>City</div><div>Tokio</div></div>
-                <div class="key-value"><div>Office Address</div><div>2-1 Kitanomarukoen, Chiyoda</div></div>
-                <div class="key-value"><div>Phone Number</div><div>+9 876 543 21 00</div></div>
+
+              <div class="accordion__section">
+                <h3>
+                  <button id="trigger2" class="accordion__trigger"
+                    aria-expanded="false" aria-controls="panel2" aria-label="Pro Care price plan: $35 per hour">
+                    <span class="accordion__title">Pro Care</span>
+                    <span class="accordion__subtitle"><span class="accordion__accented">$35</span> / per hour</span>
+                    <span class="accordion__icon"></span>
+                  </button>
+                </h3>
+                <div class="accordion__panel" id="panel2" role="region" aria-labelledby="trigger2">
+                  <p>Release of Letraset sheets containing Lorem Ipsum passages, and more recently</p>
+                  <button class="accordion__button">Order</button>
+                </div>
               </div>
             </div>
 
           </div>
-
+          <div class="prices__teaser">
+            <p class="prices__heading">Our best <span class="prices__accented">gardeners</span> are ready to help you</p>
+            <div class="prices__image"></div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
+      <section class="contact" id="contacts" tabindex="-1">
+        <div class="contact__container">
+          <h2 class="contact__heading">Contact us</h2>
+          <div class="contact__content">
+            <div class="contact__image"></div>
+            <div class="address">
+
+              <div class="dropdown-menu-button wrapper" id="address-menu-wrapper">
+                <button class="dropdown-menu-trigger" id="address-menu-trigger" aria-controls="address-menu-items" aria-expanded="false"
+                    aria-haspopup="true" type="button">Select city to see the address<span class="dropdown-menu-trigger__icon"></span></button>
+                  <ul id="address-menu-items" role="menu" class="dropdown-menu-items" aria-labelledby="address-menu-trigger">
+                      <li class="menuitem" role="menuitem" tabindex="-1" aria-controls="address-1"> Delhi, India</li>
+                      <li class="menuitem" role="menuitem" tabindex="-1" aria-controls="address-2"> Montreal, Canada</li>
+                      <li class="menuitem" role="menuitem" tabindex="-1" aria-controls="address-3"> Tokio, Japan</li>
+                  </ul>
+              </div>
+
+              <div id="contact-addresses">
+                <div class="contact__address" id="address-1" role="region" >
+                  <div class="key-value"><div>City</div><div>Delhi</div></div>
+                  <div class="key-value"><div>Office Address</div><div>21, Sundar Nagar, New Delhi</div></div>
+                  <div class="key-value"><div>Phone Number</div><div>+9 876 543 21 00</div></div>
+                </div>
+                <div class="contact__address" id="address-2" role="region" style="display: none;">
+                  <div class="key-value"><div>City</div><div>Montreal</div></div>
+                  <div class="key-value"><div>Office Address</div><div>90 Av. Roosevelt</div></div>
+                  <div class="key-value"><div>Phone Number</div><div>+9 876 543 21 00</div></div>
+                </div>
+                <div class="contact__address" id="address-3" role="region" style="display: none;">
+                  <div class="key-value"><div>City</div><div>Tokio</div></div>
+                  <div class="key-value"><div>Office Address</div><div>2-1 Kitanomarukoen, Chiyoda</div></div>
+                  <div class="key-value"><div>Phone Number</div><div>+9 876 543 21 00</div></div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+
+    </main>
     <script src="./js.js"></script>
   </body>
 </html>

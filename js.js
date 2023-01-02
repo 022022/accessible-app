@@ -1,3 +1,103 @@
+/* accessible burger menu */
+
+const burger = document.getElementById('burger');
+const nav = document.getElementById('header-nav-items');
+
+burger.addEventListener('click', toggleBurger);
+burger.addEventListener('keydown', handleKeyBoardBurger);
+
+nav.addEventListener('click', toggleBurger);
+nav.addEventListener('keydown', handleKeyBoardBurger);
+
+function toggleBurger(){
+  if(nav.classList.contains('open')) {
+    nav.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    nav.lastElementChild.firstElementChild.removeEventListener('keydown', burgerTrapFocus);
+  } else {
+    nav.classList.add('open');
+    burger.setAttribute('aria-expanded', 'true');
+    nav.firstElementChild.firstElementChild.focus();
+    const lastItem = nav.lastElementChild.firstElementChild;
+    lastItem.addEventListener('keydown', burgerTrapFocus);
+  }
+}
+
+function burgerTrapFocus(event){
+  if(event.code === 'Tab') {
+    event.preventDefault();
+    burger.focus();
+  }
+};
+
+function closeBurgerWithFocus(){
+    nav.classList.remove('open');
+    burger.setAttribute('aria-expanded', 'false');
+    burger.focus();
+}
+
+function handleKeyBoardBurger(event){
+  switch(event.code){
+    case 'Enter':
+    case 'Space':
+      event.preventDefault();
+      toggleBurger();
+      if(event.target.getAttribute('href')){
+        const [, linkId] = event.target.getAttribute('href').split('#');
+        const menuTarget = document.getElementById(linkId);
+        menuTarget.scrollIntoView();
+        menuTarget.focus();
+      }
+      return;
+
+    case 'Escape':
+      event.preventDefault();
+      closeBurgerWithFocus();
+      return;
+    default:
+      return;
+  }
+}
+
+
+/* accessible accordion */
+
+const accordionTriggers = document.querySelectorAll('.accordion__trigger');
+const accordionPanels = document.querySelectorAll('.accordion__panel');
+
+Array.from(accordionTriggers).forEach((item) => item.addEventListener('click', openAccordion));
+Array.from(accordionTriggers).forEach((item) => item.addEventListener('keydown', handleKeyBoardAccordion));
+
+function openAccordion(event){
+  const button = event.target.closest('button');
+  const panelID = button.getAttribute('aria-controls').slice('panel'.length);
+
+  Array.from(accordionPanels).forEach((item, index) => {
+    const respectiveTrigger = Array.from(accordionTriggers)[index];
+
+    if(String(index) !== panelID) {
+      item.classList.remove('open');
+      respectiveTrigger.setAttribute('aria-expanded', 'false');
+    } else {
+      item.classList.add('open');
+      respectiveTrigger.setAttribute('aria-expanded', 'true');
+    }
+  })
+}
+
+function handleKeyBoardAccordion(event){
+  switch(event.code){
+    case 'Enter':
+    case 'Space':
+      event.preventDefault();
+      openAccordion(event);
+      return;
+    default:
+      return;
+  }
+}
+
+
 /* accessible drop-down menu */
 
 const addressMenuWrapper = document.getElementById('address-menu-wrapper');
@@ -35,6 +135,14 @@ function handleMenu(event){
   }
 }
 
+function closeMenuWithFocus(event){
+  const wrapper = event.target.closest('.wrapper');
+  const el = wrapper.lastElementChild;
+  el.classList.remove('open');
+  wrapper.firstElementChild.setAttribute('aria-expanded', 'false');
+  wrapper.firstElementChild.focus();
+}
+
 function handleKeyBoardAddress(event){
   switch (event.code) {
     case 'Enter':
@@ -57,7 +165,7 @@ function handleKeyBoardAddress(event){
 
     case 'Escape':
       event.preventDefault();
-      handleMenu(event);
+      closeMenuWithFocus(event);
       return;
 
     default:
@@ -70,42 +178,4 @@ function focusWhenAlreadyOpen(event){
   if(wrapper.firstElementChild.getAttribute('aria-expanded') === 'true') {
     wrapper.lastElementChild.firstElementChild.focus();
   }
-}
-
-
-/* accessible accordion */
-
-const accordionTriggers = document.querySelectorAll('.accordion__trigger');
-const accordionPanels = document.querySelectorAll('.accordion__panel');
-
-Array.from(accordionTriggers).forEach((item) => item.addEventListener('click', openAccordion));
-Array.from(accordionTriggers).forEach((item) => item.addEventListener('keydown', handleKeyBoardAccordion));
-
-function openAccordion(event){
-  const button = event.target.closest('button');
-  const panelID = button.getAttribute('aria-controls').slice('panel'.length);
-
-  Array.from(accordionPanels).forEach((item, index) => {
-    const respectiveTrigger = Array.from(accordionTriggers)[index];
-
-    if(String(index) !== panelID) {
-      item.classList.remove('open');
-      respectiveTrigger.setAttribute('aria-expanded', 'false');
-    } else {
-      item.classList.add('open');
-      respectiveTrigger.setAttribute('aria-expanded', 'true');
-    }
-  })
-}
-
-function handleKeyBoardAccordion(event){
-  switch(event.code){
-    case 'Enter':
-    case 'Space':
-      openAccordion(event);
-      return;
-    default:
-      return;
-  }
-
 }
