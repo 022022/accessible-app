@@ -154,13 +154,13 @@ function handleKeyBoardAddress(event){
     case 'ArrowDown':
       event.preventDefault();
       const nextOption = event.target.nextElementSibling;
-      nextOption.focus();
+      if(nextOption) nextOption.focus();
       return;
 
     case 'ArrowUp':
       event.preventDefault();
       const prevOption = event.target.previousElementSibling;
-      prevOption.focus();
+      if(prevOption) prevOption.focus();
       return;
 
     case 'Escape':

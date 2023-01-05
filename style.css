@@ -4,7 +4,7 @@
   --bg-color:#EDF2EC;
   --text-color: #636060;
   --light-color: #aeaeae;
-  --primary-color: #3E900D;
+  --primary-color: #307706;
   --primary-light-color: #D6E7D2;
   --accent-color: #E06733;
 }
@@ -52,6 +52,11 @@ header {
   width: 22px;
   margin-bottom: 3px;
   z-index: 1000;
+}
+
+.header__nav {
+  display: grid;
+  justify-content: end;
 }
 
 h1.header__brand {
@@ -132,7 +137,7 @@ h1.header__brand {
 }
 
 .welcome__accented {
-  color: var(--primary-color);
+  color: var(--accent-color);
 }
 
 .welcome__heading {
@@ -241,7 +246,7 @@ h1.header__brand {
 }
 
 .prices__accented {
-  color: var(--primary-color);
+  color: var(--accent-color);
 }
 
 .prices__button {
