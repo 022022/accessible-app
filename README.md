@@ -27,33 +27,33 @@ Deploy: https://022022.github.io/accessible-app/
 
 #### Accessible navigation
 
-* The skip navigation pattern  used to skip past the main site navigation onto the main landmark element. "Skip" link is hidden from view until focused with keyboard.
+* The skip navigation pattern  used to skip past the main site navigation onto the main landmark element. "Skip" link is hidden from view until focused with keyboard
 
-* Activating the skip link moves keyboard focus to the target element and screen reader will announce the contents of that element. 
+* Activating the skip link moves keyboard focus to the target element and screen reader will announce the contents of that element
 
-* Burger menu is keyboard focusable. Button label and state are announced by screenreader.
+* Burger menu is keyboard focusable. Button label and state are announced by screenreader
 
-* SPACEBAR or ENTER key on button expands the menu.
-When menu is expanded, keyboard focus goes to the first item in the menu.
+* SPACEBAR or ENTER key on button expands the menu
+When menu is expanded, keyboard focus goes to the first item in the menu
 
 * TAB key navigates keyboard focus through commands 
 Focus is trapped inside expanded menu, until user closes it or activates a menu link
 
-* ESC key collapses the menu and return focus to button.
+* ESC key collapses the menu and return focus to button
 
 
 #### Accessible accordion
 
-* Pressing TAB key moves keyboard focus from one header to the next and through any interactive elements inside open panel.
-* SPACEBAR or ENTER key on button opens the panel. Any other open panel closes, but this should not be announced by screenreader. 
+* Pressing TAB key moves keyboard focus from one header to the next and through any interactive elements inside open panel
+* SPACEBAR or ENTER key on button opens the panel. Any other open panel closes, but this should not be announced by screenreader 
 
 
 #### Accessible dropdown menu
 
-* Button is keyboard focusable. Button label and state are announced by screenreader.
-* SPACEBAR or ENTER key on button expands the dropdown, keyboard focus goes to the first item in the menu.
+* Button is keyboard focusable. Button label and state are announced by screenreader
+* SPACEBAR or ENTER key on button expands the dropdown, keyboard focus goes to the first item in the menu
 * UP-ARROW and DOWN-ARROW keys navigate keyboard focus through commands 
-* ENTER or SPACEBAR keys activate focused item.
-* ESC key collapses the menu and returns focus to button.
-* TAB key moves keyboard focus off widget, and onto next interactive element in the page.
+* ENTER or SPACEBAR keys activate focused item
+* ESC key collapses the menu and returns focus to button
+* TAB key moves keyboard focus off widget, and onto next interactive element in the page
 
