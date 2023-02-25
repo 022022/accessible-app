@@ -33,11 +33,9 @@ Deploy: https://022022.github.io/accessible-app/
 
 * Burger menu is keyboard focusable. Button label and state are announced by screenreader
 
-* SPACEBAR or ENTER key on button expands the menu
-When menu is expanded, keyboard focus goes to the first item in the menu
+* SPACEBAR or ENTER key on button expands the menu. When menu is expanded, keyboard focus goes to the first item in the menu
 
-* TAB key navigates keyboard focus through commands 
-Focus is trapped inside expanded menu, until user closes it or activates a menu link
+* TAB key navigates keyboard focus through commands. Focus is trapped inside expanded menu, until user closes it or activates a menu link
 
 * ESC key collapses the menu and return focus to button
 
